@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Upload Image{% endblock %}
+{% block content %}
+<div class="card mx-auto" style="max-width: 500px;">
+    <div class="card-header">
+        <h2 class="text-center">Upload an Image</h2>
+    </div>
+    <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="image" class="form-label">Choose an Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Upload</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
